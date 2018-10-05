@@ -3,7 +3,7 @@
 #include <string>
 #include <sstream>
 #include <qstring.h>
-#include <qmessagebox.h>
+#include <QMessageBox>
 
 BMICalc::BMICalc(QWidget *parent) :
     QMainWindow(parent),
@@ -70,7 +70,7 @@ QString BMICalc::getResult()
     // if helper is equal to null it will run
     if( !static_cast<int>(helper) )
     {
-        // there should be a qmessagebox
+        issueWhenHeightIsNull();
         return nullptr;
     }
 
@@ -107,7 +107,7 @@ void BMICalc::getData()
     // if height or weight are not numbers it will run
     if(!onlyNumbersDb(weightStr) || !onlyNumbersInt(heightStr))
     {
-        // there should be a qmessagebox
+        noNumbersIssue();
         return;
     }
 
@@ -236,4 +236,26 @@ QString BMICalc::eraseResult(std::string data)
     QString helper = StrQt(data);
 
     return helper;
+}
+
+void BMICalc::issueWhenHeightIsNull()
+{
+    QMessageBox warning;
+
+    warning.setText("Uwaga!");
+    warning.setInformativeText("Wysokość nie może być równa 0!");
+    warning.setStandardButtons(QMessageBox::Ok);
+    warning.setDefaultButton(QMessageBox::Ok);
+    int run = warning.exec();
+}
+
+void BMICalc::noNumbersIssue()
+{
+    QMessageBox warning;
+
+    warning.setText("Uwaga!");
+    warning.setInformativeText("Dane muszą być liczbami!");
+    warning.setStandardButtons(QMessageBox::Ok);
+    warning.setDefaultButton(QMessageBox::Ok);
+    int run = warning.exec();
 }

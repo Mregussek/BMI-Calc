@@ -90,6 +90,11 @@ private:
     // updates the result by leaving the number only with 5 characters
     QString eraseResult(std::string);
 
+    // issue when height is equal to 0
+    void issueWhenHeightIsNull();
+
+    // issue when user doesn't type numbers
+    void noNumbersIssue();
 };
 
 #endif // BMICALC_H
