@@ -28,7 +28,7 @@ mateuszrzeczyca17@gmail.com
 
 ## Screenshots
 
-![alt-text-1](img/default.png "img/default.png") 
-![alt-text-2](img/example_calc.png "img/example_calc.png") 
-![alt-text-3](img/error_height.png "img/error_height.png") 
-![alt-text-4](img/error_not_number.png "img/error_not_number.png")
+<p float="left">
+  <img src="/img/defaul.png" width="100" />
+  <img src="/img/example_calc.png" width="100" /> 
+</p>
